@@ -1,0 +1,194 @@
+Sat Oct 10 19:08:03 +0200 2009
+creating new Template builder
+Hobo::Dryml::Template.initialize : END
+Template::Compile
+Template::proces_src
+processing taglib vendor/plugins/hobo/hobo/taglibs/core.dryml
+Template::children_to_erb
+Template::node_to_erb
+Template::node_to_erb
+Template::node_to_erb
+Template::node_to_erb
+Template::node_to_erb
+Template::element_to_erb
+Template::def_element
+Tag Name: call-tag
+Template::tag_method - call-tag 
+Template::tag_method_body
+Template::children_to_erb
+Template::node_to_erb
+Template::tag_method_body END
+<% def call_tag(all_attributes={}, all_parameters={}); parameters = Hobo::Dryml::TagParameters.new(all_parameters, []); all_parameters = Hobo::Dryml::TagParameters.new(all_parameters); _tag_context(all_attributes) do tag, attributes, = _tag_locals(all_attributes, [:tag]) %>
+  [![DRYML-ERB1]!]
+<% output_buffer; end; end %>
+Template::element_to_erb END
+Template::node_to_erb
+Template::node_to_erb
+Template::node_to_erb
+Template::node_to_erb
+Template::element_to_erb
+Template::def_element
+Tag Name: wrap
+Template::tag_method - wrap 
+Template::tag_method_body
+Template::children_to_erb
+Template::node_to_erb
+Template::tag_method_body END
+<% def wrap(all_attributes={}, all_parameters={}); parameters = Hobo::Dryml::TagParameters.new(all_parameters, []); all_parameters = Hobo::Dryml::TagParameters.new(all_parameters); _tag_context(all_attributes) do tag, when_, parameter, attributes, = _tag_locals(all_attributes, [:tag, :when, :parameter]) %>
+  [![DRYML-ERB2]!]
+  [![DRYML-ERB3]!]
+<% output_buffer; end; end %>
+Template::element_to_erb END
+Template::node_to_erb
+Template::node_to_erb
+Template::node_to_erb
+Template::node_to_erb
+Template::element_to_erb
+Template::def_element
+Tag Name: partial
+Template::tag_method - partial 
+Template::tag_method_body
+Template::children_to_erb
+Template::node_to_erb
+Template::tag_method_body END
+<% def partial(all_attributes={}, all_parameters={}); parameters = Hobo::Dryml::TagParameters.new(all_parameters, []); all_parameters = Hobo::Dryml::TagParameters.new(all_parameters); _tag_context(all_attributes) do name, locals, attributes, = _tag_locals(all_attributes, [:name, :locals]) %>[![DRYML-ERB4
+
+
+]!]<% output_buffer; end; end %>
+Template::element_to_erb END
+Template::node_to_erb
+Template::node_to_erb
+Template::node_to_erb
+Template::node_to_erb
+Template::element_to_erb
+Template::def_element
+Tag Name: repeat
+Template::tag_method - repeat 
+Template::tag_method_body
+Template::children_to_erb
+Template::node_to_erb
+Template::element_to_erb
+Template::tag_call - if_
+Template::tag_attributes
+Template::default_param_proc
+Template::children_to_erb
+Template::node_to_erb
+Template::without_parameters
+call - if_({}, { :default => proc { |_if__default_content| new_context { %>[![DRYML-ERB5
+
+
+
+
+]!]<% } }, })
+Template::apply_control_attributes
+Template::maybe_make_part_call
+call before metadata - <% concat(if_({}, { :default => proc { |_if__default_content| new_context { %>[![DRYML-ERB5
+
+
+
+
+]!]<% } }, })) %>
+Template::tag_call - if_ END
+Template::element_to_erb END
+Template::tag_method_body END
+<% def repeat(all_attributes={}, all_parameters={}); parameters = Hobo::Dryml::TagParameters.new(all_parameters, []); all_parameters = Hobo::Dryml::TagParameters.new(all_parameters); _tag_context(all_attributes) do join, attributes, = _tag_locals(all_attributes, [:join]) %><% concat(if_({}, { :default => proc { |_if__default_content| new_context { %>[![DRYML-ERB5
+
+
+
+
+]!]<% } }, })) %><% output_buffer; end; end %>
+Template::element_to_erb END
+Template::node_to_erb
+Template::node_to_erb
+Template::node_to_erb
+Template::node_to_erb
+Template::element_to_erb
+Template::def_element
+Tag Name: do_
+Template::tag_method - do_ 
+Template::tag_method_body
+Template::children_to_erb
+Template::node_to_erb
+Template::tag_method_body END
+<% def do_(all_attributes={}, all_parameters={}); parameters = Hobo::Dryml::TagParameters.new(all_parameters, []); all_parameters = Hobo::Dryml::TagParameters.new(all_parameters); _tag_context(all_attributes) do attributes, = _tag_locals(all_attributes, []) %>[![DRYML-ERB6]!]<% output_buffer; end; end %>
+Template::element_to_erb END
+Template::node_to_erb
+Template::node_to_erb
+Template::node_to_erb
+Template::node_to_erb
+Template::element_to_erb
+Template::def_element
+Tag Name: with
+Template::element_to_erb END
+Template::node_to_erb
+Template::node_to_erb
+Template::node_to_erb
+Template::node_to_erb
+Template::element_to_erb
+Template::def_element
+Tag Name: if_
+Template::tag_method - if_ 
+Template::tag_method_body
+Template::children_to_erb
+Template::node_to_erb
+Template::tag_method_body END
+<% def if_(all_attributes={}, all_parameters={}); parameters = Hobo::Dryml::TagParameters.new(all_parameters, []); all_parameters = Hobo::Dryml::TagParameters.new(all_parameters); _tag_context(all_attributes) do test, attributes, = _tag_locals(all_attributes, [:test]) %>[![DRYML-ERB7
+
+
+
+
+]!]<% output_buffer; end; end %>
+Template::element_to_erb END
+Template::node_to_erb
+Template::node_to_erb
+Template::node_to_erb
+Template::node_to_erb
+Template::element_to_erb
+Template::def_element
+Tag Name: else_
+Template::tag_method - else_ 
+Template::tag_method_body
+Template::children_to_erb
+Template::node_to_erb
+Template::tag_method_body END
+<% def else_(all_attributes={}, all_parameters={}); parameters = Hobo::Dryml::TagParameters.new(all_parameters, []); all_parameters = Hobo::Dryml::TagParameters.new(all_parameters); _tag_context(all_attributes) do attributes, = _tag_locals(all_attributes, []) %>[![DRYML-ERB8]!]<% output_buffer; end; end %>
+Template::element_to_erb END
+Template::node_to_erb
+Template::node_to_erb
+Template::node_to_erb
+Template::node_to_erb
+Template::element_to_erb
+Template::def_element
+Tag Name: unless_
+Template::tag_method - unless_ 
+Template::tag_method_body
+Template::children_to_erb
+Template::node_to_erb
+Template::tag_method_body END
+<% def unless_(all_attributes={}, all_parameters={}); parameters = Hobo::Dryml::TagParameters.new(all_parameters, []); all_parameters = Hobo::Dryml::TagParameters.new(all_parameters); _tag_context(all_attributes) do test, attributes, = _tag_locals(all_attributes, [:test]) %>[![DRYML-ERB9
+
+
+
+
+]!]<% output_buffer; end; end %>
+Template::element_to_erb END
+Template::node_to_erb
+Template::node_to_erb
+Template::node_to_erb
+Template::node_to_erb
+Template::element_to_erb
+Template::def_element
+Tag Name: fake-field-context
+Template::tag_method - fake-field-context 
+Template::tag_method_body
+Template::children_to_erb
+Template::node_to_erb
+Template::tag_method_body END
+<% def fake_field_context(all_attributes={}, all_parameters={}); parameters = Hobo::Dryml::TagParameters.new(all_parameters, []); all_parameters = Hobo::Dryml::TagParameters.new(all_parameters); _tag_context(all_attributes) do fake_field, context, attributes, = _tag_locals(all_attributes, [:fake_field, :context]) %>[![DRYML-ERB10
+
+
+
+]!]<% output_buffer; end; end %>
+Template::element_to_erb END
+Template::node_to_erb
+Build template with Hobo::Dryml::DRYMLBuilder

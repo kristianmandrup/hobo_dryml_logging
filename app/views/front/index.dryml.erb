@@ -1,0 +1,9 @@
+<% concat(page({:title => "Home"}, {
+  :body => proc { [{:class => "front-page"}, {}] }, 
+  :content => proc { [{}, { :default => proc { |_content__default_content| new_context { %>
+    <% concat(comma({}, { :default => proc { |_comma__default_content| new_context { %>
+      <% concat(x({}, { :default => proc { |_x__default_content| new_context { %>hello<% } }, })) %>
+      <% concat(x({}, { :default => proc { |_x__default_content| new_context { %>hello you<% } }, })) %>
+    <% } }, })) %>
+  <% } }, }] }, 
+})) %>

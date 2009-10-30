@@ -1,0 +1,43 @@
+<!-- Contains view-layer support for Hobo's lifecycles. Note that lifecycle forms are generated automatically in `app/views/taglibs/auto/rapid/forms.dryml` - this library contains only lifecycle push-buttons. -->
+
+<!-- A push-button to invoke a lifecycle transition either as a page-reload or as an ajax call.
+  
+### Attributes
+
+ - `transition` - the name of the transition to invoke. Required
+ - `update` - one or more DOM IDs of ajax parts to update after the transition
+ - `label` - the label on the button. Defaults to the name of the transition
+
+All of the [standard ajax attributes](/api_taglibs/rapid_forms) are also supported. 
+  -->
+<def tag="transition-button" attrs="transition, update, label"><%= 
+    transition = transition.name unless transition.is_a?(String)
+    ajax_attributes, html_attributes = attributes.partition_hash(Hobo::RapidHelper::AJAX_ATTRS)
+
+    html_attributes[:method] = :put
+    url = object_url(this, transition, :method => :put)
+    add_classes!(html_attributes, "transition-button #{transition}-button")
+    label ||= transition.to_s.titleize
+    if update || !ajax_attributes.empty?
+      ajax_attributes[:message] ||= label
+      func = ajax_updater(url, update, ajax_attributes)
+      html_attributes.update(:onclick => "var e = this; " + func, :type =>'button', :value => label)
+      element(:input, html_attributes, nil, true, true)
+    else
+      button_to(label, url, html_attributes)
+    end
+  %>
+</def>
+  
+
+<!-- Renders a div containing transition buttons for every transition available to the current user.
+  
+For example, you could use this on a `Friendship` card: the person invited to have friendship would automatically see 'Accept' and 'Decline' buttons, while the person initiating the invite would see 'Retract'.
+  -->  
+<def tag="transition-buttons">
+  <div class="transitions">
+    <% this.lifecycle.available_transitions_for(current_user).each do |t| %>
+      <transition-button transition="&t"/>
+    <% end %>
+  </div>
+</def>

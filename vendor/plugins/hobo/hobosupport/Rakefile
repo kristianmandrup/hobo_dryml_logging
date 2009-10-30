@@ -1,0 +1,21 @@
+require 'echoe'
+
+namespace "test" do
+  desc "Run the doctests"
+  task :doctest do |t|
+    exit(1) if !system("rubydoctest test/*.rdoctest test/hobosupport/*.rdoctest")
+  end
+end
+
+Echoe.new('hobosupport') do |p|
+  p.author  = "Tom Locke"
+  p.email   = "tom@tomlocke.com"
+  p.summary = "Core Ruby extensions from the Hobo project"
+  p.url     = "http://hobocentral.net/hobosupport"
+  p.project = "hobo"
+  
+  p.changelog = "CHANGES.txt"
+  p.version   = "0.8.8"
+  
+  p.development_dependencies = []
+end

@@ -1,0 +1,9 @@
+<page title="Home">
+  <body: class="front-page"/>
+  <content:>
+    <comma>
+      <x>hello</x>
+      <x>hello you</x>
+    </comma>
+  </content:>
+</page>
